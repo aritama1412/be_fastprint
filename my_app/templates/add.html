@@ -1,0 +1,34 @@
+{% extends "base.html" %} {% block title %} Tambah Produk {% endblock title %}
+{% block content %}
+<form method="POST" class="post-form" action="/add">  
+  {% csrf_token %}  
+  <div class="card-header">
+    <a href="/" class="btn btn-secondary">Kembali</a>
+    <button type="submit" class="btn btn-primary">Simpan</button> 
+  </div>
+  <div class="card-body">
+    <h1>ini halaman tambah</h1>
+      <div class="mb-3"> 
+          <label>ID Produk:</label>  
+          {{ form.id_produk }}   
+      </div> 
+      <div class="mb-3"> 
+          <label>Nama Produk:</label>  
+          {{ form.nama_produk }}   
+      </div> 
+      <div class="mb-3"> 
+          <label>Harga:</label>  
+          {{ form.harga }}   
+      </div> 
+      <div class="mb-3"> 
+          <label>Kategori:</label>  
+          {{ form.kategori_id }}   
+      </div> 
+      <div class="mb-3"> 
+          <label>Status:</label>  
+          {{ form.status_id }}   
+      </div> 
+
+  </div>
+</form>
+{% endblock content %}
